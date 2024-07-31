@@ -9,7 +9,7 @@ export default async function connectToDB() {
     }
 
     try {
-        await mongoose.connect('mongodb://127.0.0.1:27017/share_prompt');
+        await mongoose.connect(process.env.MONGO_URI);
         isConnected = true;
         console.log("DataBase connected");
     } catch (error) {
